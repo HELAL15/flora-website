@@ -235,7 +235,7 @@ section.cart{
   background-color: #00000071;
   display: none;
   transition: .3s;
-  overflow-x: scroll ;
+  overflow-y: auto ;
 }
 section.cart.active{
   display: block;
@@ -245,10 +245,9 @@ section.cart.active{
   top: 50%;right: 0%;
   transform: translate(-0%,-50%);
   width: 40%;
-  height: 100%;
+  /* height: 100%; */
   background-color: var(--white);
   padding: 2rem;
-  overflow: hidden;
 }
 .cart .cart-container .heading{
   display: flex;
