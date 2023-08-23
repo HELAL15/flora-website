@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+    font-family: Comfortaa;
+}
+
+:root{
+  --white: #fff;
+  --black: #000;
+  --gray: #808080;
+  --light-gray: #f5f5f5;
+  --pink: #ed58d4;
+}
+nav{
+  position: fixed !important;
+  top: 0;left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: var(--white);
+  transition: .3s;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+nav .navbar-brand{
+  color: var(--pink) !important;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: .5rem;
+  text-transform: capitalize;
+}
+nav .navbar-nav .nav-item a{
+  color: var(--black) !important;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: .1rem;
+  transition: .3s;
+  text-transform: capitalize;
+}
+nav .navbar-nav .nav-item a:hover{
+  color: var(--pink) !important;
+}
+.navbar-toggler{
+border: 1px solid var(--pink) !important;
+}
+.navbar-toggler:focus {
+  
+  box-shadow: 0 0 0 #ed58d464 !important;
+}
+.bars{
+  color: var(--pink);
+}
+.navbar-toggler .bars .close.hide , .navbar-toggler .bars .open.hide{
+  display: none;
+}
+nav .icons .btn i{
+  font-size: 24px;
+  transition: .3s;
+}
+nav .icons .btn {
+  color: var(--black);
+  border-color: none !important;
+}
+nav .icons .btn:hover{
+  color: var(--pink);
+}
+
+/*===============================================*/
+
+header{
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  background-image: url(../images/wedding.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 4.6rem;
+}
+header .overlay{
+  position: absolute;
+  top: 0;left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black);
+  opacity: .5;
+  z-index: 1;
+}
+header h1{
+  position: absolute;
+  top: 50%;left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 2;
+  color: var(--white);
+  font-size: 45px;
+  font-weight: 700;
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+}
+/*==========================================================*/
+.products .container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.products .navs-products{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+  gap: 1rem;
+}
+.products .navs-products .nav-product{
+  position: relative;
+  border: 3px solid var(--gray);
+  padding: 2px 2px;
+  overflow: hidden;
+  transition: .3s;
+  cursor: pointer;
+  display: flex;
+  width: fit-content;
+}
+.products .navs-products .nav-product.active{
+  border: 3px solid var(--pink);
+}
+.products .navs-products .nav-product .item-number{
+  padding: 12px 8px;
+  background-color: var(--gray);
+  margin: 0 2px;
+}
+.products .navs-products .nav-product .item-number.active{
+  background-color: var(--pink);
+}
+
+.grid-style{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 1rem;
+}
+.products .grid-style .card{
+
+  border: none;
+  transition: .3s;
+  height: max-content !important;
+}
+.products .grid-style .card img{
+  /* width: 100%;
+  height: 100%; */
+  max-height: 300px !important;
+  object-fit: cover;
+  transition: .3s;
+  position: relative;
+}
+.products .grid-style .card .title{
+  padding: 1rem 0;
+}
+.products .grid-style .card h3{
+  font-size: 28px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--pink);
+}
+.products .grid-style .card p{
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--gray);
+}
+.products .grid-style .card .more-details{
+  position: absolute;
+  top: 0;left: 0;
+  /* position: relative; */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: none;
+
+  transition: .3s;
+}
+.products .grid-style .card:hover .more-details{
+  display: flex;
+}
+.products .grid-style .card .more-details i{
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  transform: translate(0% , 0%);
+  color: var(--white);
+  font-size: 24px;
+  cursor: pointer;
+  transition: .3s;
+}
+.products .grid-style .card .more-details i:hover{
+  color: var(--pink);
+}
+.products .grid-style .card .more-details .btns{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  display: flex;
+  flex-direction: column;
+}
+.products .grid-style .card .more-details .btn{
+  padding: .7rem 2rem;
+  background-color: var(--pink);
+  color: var(--white);
+  border: none;
+  border-radius: 44px !important;
+  border-radius: 0;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  transition: .3s;
+  width: max-content;
+}
+.products .grid-style .card .more-details .btn:hover{
+  background-color: var(--white);
+  color: var(--pink);
+  /* border: 1px solid var(--pink); */
+}
+
+/*============================================================*/
+
+section.cart{
+  z-index: 1000;
+  position: fixed;
+  top: 0;right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000071;
+  display: none;
+  overflow-y: auto ;
+  transition: .3s;
+}
+section.cart.active{
+  display: block;
+}
+.cart .cart-container{
+  position: absolute;
+  top: 50%;right: 0%;
+  transform: translate(-0%,-50%);
+  width: 40%;
+  height: 100%;
+  background-color: var(--white);
+  padding: 2rem;
+  overflow: hidden;
+}
+.cart .cart-container .heading{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: .7rem;
+  border-bottom: 1px solid var(--gray);
+}
+.cart .cart-container .heading h3{
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--pink);
+}
+.cart .cart-container .heading i{
+  font-size: 32px;
+  color: var(--gray);
+  cursor: pointer;
+}
+.cart .card{
+  border: none;
+}
+.cart .cart-body .price{
+  color: var(--pink);
+}
+.cart .cart-body .add-minus .count{
+  border: 1px solid var(--gray);
+  padding: .4rem .8rem;
+  border-radius: 5px !important;
+}
+
+.cart .cart-body .add-minus .plus ,
+.cart .cart-body .add-minus .minus{
+  font-size: 20px;
+  background-color: transparent !important;
+  border-color: var(--gray);
+  color: var(--gray);
+}
+.cart .cart-body .add-minus .plus:hover ,
+.cart .cart-body .add-minus .minus:hover{
+  border-color: var(--pink);
+  color: var(--pink);
+}
+
+.cart .cart-body .trash{
+  color: var(--white);
+  background-color: var(--pink);
+  border-color: var(--pink);
+  cursor: pointer;
+  font-size: 20px;
+  transition: .3s;
+}
+
+
+
+/* media query*/
+@media (max-width: 991px) {
+
+}
+@media (max-width: 768px) {
+  nav .navbar-collapse{
+    position: absolute;
+    top: 100%;left: 0;
+    width: 100%;
+    padding-left: 2rem;
+    background-color: var(--white);
+  }
+  nav .navbar-brand{
+    color: var(--pink) !important;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: .5rem;
+  }
+  nav .icons .btn i{
+    font-size: 24px;
+  }
+  header{
+  height: 25vh;
+  margin-top: 4rem;
+  }
+  header h1{
+  font-size: 30px;
+  }
+  .products .navs-products {
+    display: none;
+}
+  .grid-style{
+    grid-template-columns: repeat(3,1fr) !important;
+  }
+  .products .grid-style .card h3 {
+    font-size: 24px;
+}
+.cart .cart-container {
+  width: 70%;
+}
+}
+@media (max-width: 425px) {
+  nav .navbar-collapse{
+    position: absolute;
+    top: 100%;left: 0;
+    width: 100%;
+    padding-left: 2rem;
+    background-color: var(--white);
+  }
+  nav .navbar-brand{
+    font-size: 28px;
+  }
+  nav .icons .btn i{
+    font-size: 18px;
+  }
+  header{
+    height: 20vh;
+    margin-top: 4rem;
+    }
+    header h1{
+    font-size: 20px;
+    }
+    .products .navs-products {
+      display: none;
+  }
+    .grid-style{
+      grid-template-columns: repeat(1,1fr) !important;
+    }
+    .cart .cart-container {
+      width: 90%;
+    }
+}
