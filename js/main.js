@@ -31,21 +31,11 @@ nav_product.forEach(nav_product1 => {
     let nav_length = parseInt(nav_product1.getAttribute("data-bs-target"));
     let grid_style = document.querySelector(".grid-style");
     grid_style.style.gridTemplateColumns = `repeat(${nav_length} , 1fr)`;
-    console.log("hello");
 
     nav_product.forEach(ele => {
       ele.classList.remove('active');
     });
     nav_product1.classList.add('active');
-
-let itemNumbers = nav_product1.querySelectorAll('.item-number'); 
-
-itemNumbers.onclick =(item)=>{
-      item.forEach(item => {
-      item.classList.add('active');
-    })
-    }
-// itemNumbers.classList.remove('active');
   };
 
 });
@@ -75,30 +65,143 @@ trash.forEach((trash1 , i) => {
   });
 });
 
-/*====================================================================================*/
+/*=======================================================================================*/
+const plusButtons = document.querySelectorAll('.plus');
+const minusButtons = document.querySelectorAll('.minus');
+const countConts = document.querySelectorAll('.count');
+const availableSpans = document.querySelectorAll('.available span');
+const priceElements = document.querySelectorAll('.price');
 
-  const plusButtons = document.querySelectorAll('.plus');
-  const minusButtons = document.querySelectorAll('.minus');
-  const count_conts = document.querySelectorAll('.count');
-
+plusButtons.forEach((plusButton, i) => {
+  const minusButton = minusButtons[i];
+  const countCont = countConts[i];
+  const availableSpan = availableSpans[i];
+  const priceElement = priceElements[i];
   let countElement = 1;
+  const flowerPrice = parseInt(priceElement.getAttribute('data-price'));
 
-  plusButtons.forEach((btn, i) => {
-    btn.onclick = () => {
-      if (countElement < parseInt(count_conts[i].closest('.details').querySelector('.available span').textContent)) {
-        countElement++;
-        console.log(countElement);
-        count_conts[i].textContent = countElement;
-      }
-    };
-  });
+  plusButton.onclick = () => {
+    if (countElement < parseInt(availableSpan.textContent)) {
+      countElement++;
+      countCont.textContent = countElement;
+      const sum = flowerPrice * countElement;
+      priceElement.textContent = sum + "$";
+    }
+  };
 
-  minusButtons.forEach((btn, i) => {
-    btn.onclick = () => {
-      if (countElement > 1) {
-        countElement--;
-        console.log(countElement);
-        count_conts[i].textContent = countElement;
-      }
-    };
-  });
+  minusButton.onclick = () => {
+    if (countElement > 1) {
+      countElement--;
+      countCont.textContent = countElement;
+      const sum = flowerPrice * countElement;
+      priceElement.textContent = sum + "$";
+    }
+  };
+});
+
+/*==========================================================================================*/
+
+
+
+
+let quick_view = document.querySelector('.quick-view');
+let view = document.querySelectorAll('.view');
+let close_view = document.querySelector('.close-view');
+
+view.forEach((ele)=>{
+  ele.addEventListener('click', ()=>{
+    quick_view.classList.remove('close');
+    quick_view.classList.add('open');
+  })
+})
+
+close_view.addEventListener('click', ()=>{
+  quick_view.classList.remove('open');
+  quick_view.classList.add('close');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const plusButtons = document.querySelectorAll('.plus');
+// const minusButtons = document.querySelectorAll('.minus');
+// const count_conts = document.querySelectorAll('.count');
+
+// let countElement = 1;
+
+// plusButtons.forEach((btn, i) => {
+//   btn.onclick = () => {
+//     if (countElement < parseInt(count_conts[i].closest('.details').querySelector('.available span').textContent)) {
+//       countElement++;
+//       console.log(countElement);
+//       count_conts[i].textContent = countElement;
+//       let price = document.querySelectorAll('.price');
+
+// price.forEach((flower)=>{
+//   let flowerPrice = parseInt(flower.getAttribute('data-price'));
+//   // console.log(flowerPrice);
+
+//   let sum = flowerPrice * countElement ;
+
+//   console.log(sum);
+//   flower.textContent = sum;
+  
+// })
+//     }
+//   };
+// });
+
+// minusButtons.forEach((btn, i) => {
+//   btn.onclick = () => {
+//     if (countElement > 1) {
+//       countElement--;
+//       console.log(countElement);
+//       count_conts[i].textContent = countElement;
+//       let price = document.querySelectorAll('.price');
+
+// price.forEach((flower)=>{
+//   let flowerPrice = parseInt(flower.getAttribute('data-price'));
+//   // console.log(flowerPrice);
+
+//   let sum = flowerPrice * countElement ;
+
+//   console.log(sum);
+//   flower.textContent = sum;
+  
+// })
+//     }
+//   };
+// });
+
+
+
+
+  // function fibonacci(n){
+  //   const fib = [0 , 1]
+  //   for(let i = 2; i < n; i++){
+  //     fib[i] = fib[i - 1] + fib[i - 2];
+  //   }
+  //   return fib
+  // }
+  // console.log(fibonacci(2));
+  // console.log(fibonacci(3));
+  // console.log(fibonacci(7));
+  // console.log(fibonacci(10));

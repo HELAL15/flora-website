@@ -301,6 +301,150 @@ section.cart.active{
   transition: .3s;
 }
 
+/*===========================================================*/
+
+.quick-view{
+  position: fixed;
+  top: 0;left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #0000009a;
+  transition: .3s;
+  overflow-y: auto;
+  z-index: 1000;
+  display: non;
+  transform: scale(1);
+}
+.quick-view.close{
+  display: none !important;
+}
+.quick-view.open{
+  display: block !important;
+}
+.quick-view .view-item{
+  position: absolute;
+  top: 50%;left: 50%;
+  transform: translate(-50% , -50%);
+  width: 70%;
+  height: 90vh;
+  background-color: var(--white);
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.carousel .carousel-item {
+  width: 100% !important;
+  height: 90vh !important;
+}
+
+.carousel .carousel-item img{
+  width: fit-content;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.quick-view .main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--gray);
+}
+.quick-view .cont{
+  margin: 0 1rem 0 0;
+}
+
+.quick-view .cont .title h3{
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: var(--pink);
+}
+.quick-view .cont .title .price{
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--gray);
+}
+.quick-view .cont .add-minus {
+  width: fit-content;
+  border-radius: 8px;
+}
+
+.quick-view .cont .add-minus .btn{
+  color: var(--white) !important;
+}
+
+.quick-view .cont .add-minus .form-control{
+  border: none;
+  padding: .4rem .8rem;
+  color: var(--white);
+  background-color: transparent;
+}
+.quick-view .cont .controls .add-to-cart{
+  background-color: var(--pink);
+  color: var(--white);
+  border: 1px solid var(--pink) ;
+  /* border: none; */
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: capitalize;
+  transition: .3s;
+}
+.quick-view .cont .controls .add-to-cart:hover{
+  background-color: var(--white);
+  color: var(--pink);
+  border: .5px solid var(--pink);
+}
+.quick-view .cont .controls .fav{
+  color: var(--white);
+  font-size: 18px;
+  transition: .3s;
+}
+.quick-view .cont .controls .fav:hover{
+  color: var(--pink);
+}
+
+.quick-view .cont .buy-it{
+  font-size: 18px;
+  text-transform: capitalize !important;
+}
+.quick-view .cont .code{
+  color: var(--gray);
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize !important;
+}
+
+.quick-view .cont .categories p ,
+.quick-view .cont .tags p{
+  color: var(--gray);
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize !important;
+}
+
+.quick-view .cont .categories p span,
+.quick-view .cont .tags p span{
+  color: var(--black);
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: capitalize !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* media query*/
@@ -344,6 +488,9 @@ section.cart.active{
   width: 70%;
   height: auto !important;
 }
+.carousel .carousel-item {
+  height: 50vh !important;
+}
 }
 @media (max-width: 425px) {
   nav .navbar-collapse{
@@ -375,5 +522,8 @@ section.cart.active{
     .cart .cart-container {
       width: 90%;
       height: auto !important;
+    }
+    .carousel .carousel-item {
+      height: 50vh !important;
     }
 }
