@@ -491,6 +491,9 @@ section.cart.active{
 .carousel .carousel-item {
   height: 50vh !important;
 }
+  .quick-view .view-item{
+  width: 80%;
+  }
 }
 @media (max-width: 425px) {
   nav .navbar-collapse{
@@ -526,4 +529,7 @@ section.cart.active{
     .carousel .carousel-item {
       height: 50vh !important;
     }
+  quick-view .view-item{
+  width: 90%;
+  }
 }
