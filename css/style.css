@@ -234,8 +234,8 @@ section.cart{
   height: 100%;
   background-color: #00000071;
   display: none;
-  overflow-y: auto ;
   transition: .3s;
+  overflow-x: scroll ;
 }
 section.cart.active{
   display: block;
