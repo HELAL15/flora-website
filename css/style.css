@@ -496,6 +496,9 @@ section.cart.active{
 .carousel .carousel-item {
   height: 50vh !important;
 }
+  .quick-view .view-item{
+  width: 80%;
+  }
 }
 
 
@@ -539,7 +542,14 @@ section.cart.active{
     .carousel .carousel-item {
       height: 50vh !important;
     }
+<<<<<<< HEAD
     .quick-view .cont .controls .add-to-cart {
       font-size: 14px;
     }
 }
+=======
+  quick-view .view-item{
+  width: 96%;
+  }
+}
+>>>>>>> 65dbff283ffa3ccc0baa89169d02b70357c55ffa
