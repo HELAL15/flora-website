@@ -360,7 +360,7 @@ section.cart.active{
   text-transform: capitalize;
   color: var(--pink);
 }
-.quick-view .cont .title .price{
+.quick-view .cont .title .price-view{
   font-size: 24px;
   font-weight: 500;
   text-transform: capitalize;
@@ -380,6 +380,8 @@ section.cart.active{
   padding: .4rem .8rem;
   color: var(--white);
   background-color: transparent;
+  display: flex;
+  align-items: center;
 }
 .quick-view .cont .controls .add-to-cart{
   background-color: var(--pink);
@@ -488,10 +490,18 @@ section.cart.active{
   width: 70%;
   height: auto !important;
 }
+.quick-view .view-item {
+  width: 85%;
+}
 .carousel .carousel-item {
   height: 50vh !important;
 }
 }
+
+
+
+
+
 @media (max-width: 425px) {
   nav .navbar-collapse{
     position: absolute;
@@ -523,7 +533,13 @@ section.cart.active{
       width: 90%;
       height: auto !important;
     }
+    .quick-view .view-item {
+      width: 95%;
+    }
     .carousel .carousel-item {
       height: 50vh !important;
+    }
+    .quick-view .cont .controls .add-to-cart {
+      font-size: 14px;
     }
 }

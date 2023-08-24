@@ -66,6 +66,8 @@ trash.forEach((trash1 , i) => {
 });
 
 /*=======================================================================================*/
+
+
 const plusButtons = document.querySelectorAll('.plus');
 const minusButtons = document.querySelectorAll('.minus');
 const countConts = document.querySelectorAll('.count');
@@ -80,21 +82,21 @@ plusButtons.forEach((plusButton, i) => {
   let countElement = 1;
   const flowerPrice = parseInt(priceElement.getAttribute('data-price'));
 
+  const calcPrice = ()=>{
+    countCont.textContent = countElement;
+    const sum = flowerPrice * countElement;
+    priceElement.textContent = sum + "$";
+  }
   plusButton.onclick = () => {
     if (countElement < parseInt(availableSpan.textContent)) {
       countElement++;
-      countCont.textContent = countElement;
-      const sum = flowerPrice * countElement;
-      priceElement.textContent = sum + "$";
+      calcPrice()
     }
   };
-
   minusButton.onclick = () => {
     if (countElement > 1) {
       countElement--;
-      countCont.textContent = countElement;
-      const sum = flowerPrice * countElement;
-      priceElement.textContent = sum + "$";
+      calcPrice()
     }
   };
 });
@@ -120,9 +122,36 @@ close_view.addEventListener('click', ()=>{
   quick_view.classList.add('close');
 });
 
+/*================================================================================================*/
 
 
+const plus = document.querySelector('#plus');
+const minus = document.querySelector('#minus');
+const countView = document.querySelector('#count');
+const priceView = document.querySelector('.price-view');
 
+let countElement = 1;
+const flowerPrice = parseInt(priceView.getAttribute('data-price'));
+
+const updateCountAndPrice = () => {
+  countView.textContent = countElement;
+  const sum = flowerPrice * countElement;
+  priceView.textContent = sum + "$";
+};
+
+plus.onclick = () =>{
+  countElement++;
+  updateCountAndPrice();
+}
+minus.onclick = () => {
+  if (countElement > 1) {
+    countElement--;
+    updateCountAndPrice();
+  }
+};
+
+
+/*===========================================================================================*/
 
 
 
